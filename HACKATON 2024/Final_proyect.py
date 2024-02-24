@@ -60,12 +60,6 @@ def UserPercentageFiltration(data):
   result["City"] = data["City"]
   return result
 
-
-# result = UserPercentageFiltration(UserData)
-# print(result)
-
-
-
 def TripDays(option, filteredData):
   if(option=="Weekends"):
     filteredData["Used week"]= "Weekends"
@@ -74,10 +68,6 @@ def TripDays(option, filteredData):
   elif (option=="Seasonal"):
     filteredData["Used Week"]="Seasonal"
   return filteredData
-
-# res=UserPercentageFiltration(UserData)
-# print(TripDays("Weekends",res))
-
 
 
 def Itinerary_Trip(dic, TripCost,TripLocation):
