@@ -55,5 +55,5 @@ def TripDays(option, filteredData):
     filteredData["Used Week"]="Seasonal"
   return filteredData
 
-# res=UserPercentageFiltration(UserData)
-# print(TripDays("Weekends",res))
+res=UserPercentageFiltration(UserData)
+print(TripDays("Weekends",res))
