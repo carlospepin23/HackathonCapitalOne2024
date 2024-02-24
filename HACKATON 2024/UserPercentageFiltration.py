@@ -18,7 +18,6 @@ UserData = {
 
 def UserPercentageFiltration(data):
   result = {"Travel Budget": 0, "Left Money": 0, "Used week": "", "Vacation Itinerary Percentage": 0}
-
   for k, v in data.items():
       if k == "Anual Income":
           result["Travel Budget"] = v
@@ -36,11 +35,25 @@ def UserPercentageFiltration(data):
             result["Travel Budget"] = v * vacation_percentage
 
           result["Vacation Itinerary Percentage"] = vacation_percentage
-
   result["Left Money"] = data["Anual Income"] - result["Travel Budget"]
   result["Vacation Itinerary Percentage"]= vacation_percentage *100
-
+  result["City"] = data["City"]
   return result
 
-result = UserPercentageFiltration(UserData)
-print(result)
+
+# result = UserPercentageFiltration(UserData)
+# print(result)
+
+
+
+def TripDays(option, filteredData):
+  if(option=="Weekends"):
+    filteredData["Used week"]= "Weekends"
+  elif(option=="Weekdays"):
+    filteredData["Used week"]= "Weekdays"
+  elif (option=="Seasonal"):
+    filteredData["Used Week"]="Seasonal"
+  return filteredData
+
+# res=UserPercentageFiltration(UserData)
+# print(TripDays("Weekends",res))
